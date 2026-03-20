@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Invitación</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 22px;
+    background: gold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body onclick="activarAudio()">
+
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="entrar()">Entrar</button>
+
+<script>
+let audioActivado = false;
+
+function activarAudio() {
+    if (!audioActivado) {
+        const audio = document.getElementById("musica");
+        audio.play().catch(() => {});
+        audioActivado = true;
+    }
+}
+
+function entrar() {
+    const audio = document.getElementById("musica");
+
+    audio.play();
+
+    // abre Canva en otra pestaña
+    window.open("https://fainvitaciones.com/gemini-invitacion", "_blank");
+}
+</script>
+
+</body>
+</html>
